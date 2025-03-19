@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #0ef;
+    --background-color: #081b29;
+    --text-color: white;
+    --border-color: #0ef;
+    --box-shadow: 0 0 25px #0ef;
+    --transition-speed: 0.3s;
+}
+
+.container {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background-color);
+}
+
+.wrapper {
+    position: relative;
+    width: 750px;
+    height: 800px;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    .form-box-signup {
+        background: transparent;
+        padding: 20px 0;
+        width: 50%;
+        color: var(--text-color);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        left: 25%;
+
+        h1 {
+            font-size: 32px;
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-box {
+            position: relative;
+            height: 50px;
+            width: 100%;
+            margin: 25px 0;
+        }
+
+
+        input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid white;
+            color: white;
+
+            &:focus+label,
+            &:valid+label {
+                color: #0ef;
+                top: -5px;
+            }
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                -webkit-text-fill-color: white !important;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+        }
+        &:focus + label, 
+        &:valid + label { 
+            color: var(--primary-color);
+            top: -5px;
+            transition: 0.3s ease-in-out;
+        }
+        label {
+            position: absolute;
+            top: 50%;
+            font-size: 16px;
+            color: white;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 18px;
+
+            .icon {
+                fill: white;
+            }
+
+            .icon-password {
+                fill: white;
+                cursor: pointer;
+
+            }
+        }
+
+        .btn {
+            border-radius: 40px;
+            width: 100%;
+            background: transparent;
+            height: 50px;
+            border: 2px solid #0ef;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            border: 2px solid #0ef;
+            margin-top: 30px;
+
+            &:hover {
+                background: linear-gradient(45deg, #081b29, #0ef);
+            }
+
+        }
+
+        .error {
+            color: #FF5733;
+            font-size: 12px;
+            right: 0;
+
+        }
+    }
+
+
+}

@@ -1,0 +1,174 @@
+.container {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #081b29;
+}
+
+.wrapper {
+    position: relative;
+    width: 850px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid #0ef;
+    overflow: hidden;
+    box-shadow: 0 0 25px #0ef;
+
+    .form_box_login {
+        background: transparent;
+        left: 0;
+        padding: 0 40px;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+
+        h1 {
+            font-size: 32px;
+            color: white;
+            text-align: center;
+        }
+
+        .input_box {
+            position: relative;
+            height: 50px;
+            width: 100%;
+            margin: 25px 0;
+
+        }
+
+        input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid white;
+
+            color: white;
+
+            &:focus+label,
+            &:valid+label {
+                top: -5px;
+                /* Đẩy lên mà không thay đổi top */
+                color: #0ef;
+            }
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+                -webkit-text-fill-color: white !important;
+                transition: background-color 5000s ease-in-out 0s;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            font-size: 16px;
+            color: white;
+            pointer-events: none;
+            transition: 0.5s;
+        }
+
+        i {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color:white;
+            cursor:pointer;
+        }
+
+        .btn {
+            border-radius: 40px;
+            width: 100%;
+            background: transparent;
+            height: 45px;
+            border: 2px solid #0ef;
+            outline: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            border: 2px solid #0ef;
+
+            &:hover {
+                background: linear-gradient(45deg, #081b29, #0ef);
+            }
+        }
+
+        .logreg_link {
+            margin: 20px 0 10px;
+            text-align: center;
+
+            p {
+                color: white;
+            }
+
+            a {
+                cursor: pointer;
+                color: #0ef;
+                font-weight: 600;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+
+                }
+            }
+        }
+    }
+
+    .infor_text_login {
+        position: absolute;
+        top: 0;
+        text-align: right;
+        padding: 0 40px 60px 150px;
+        width: 20%;
+        height: 100%;
+        background: transparent;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+            color: white;
+            line-height: 1.3;
+            text-transform: uppercase;
+            font-size: 20px;
+
+        }
+    }
+
+    .bg_animate {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 850px;
+        height: 650px;
+        background: linear-gradient(45deg, #081b29, #0ef);
+        transform: rotate(10deg) skewY(40deg);
+        border-bottom: 3px solid #0ef;
+        transform-origin: bottom right;
+
+    }
+
+    .error_submit {
+        color: #FF5733;
+        font-size: 15px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+}
