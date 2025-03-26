@@ -13,7 +13,7 @@ import lombok.experimental.FieldDefaults;
 public class UserUpdateRequest {
 	String username;
 	String password;
-	String firstName;
-	String lastName;
+	String firstname;
+	String lastname;
 	List<String> roles;
 }

@@ -24,6 +24,7 @@ import lombok.experimental.FieldDefaults;
 public class UserCreationRequest {
 	String username;
 	String password;
-	String firstName;
-	String lastName;
+	String firstname;
+	String lastname;
+	String email;
 }

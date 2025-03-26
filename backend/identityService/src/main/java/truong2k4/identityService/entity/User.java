@@ -35,12 +35,6 @@ public class User {
    String username;
 	@Column(name = "password")
    String password;
-	@Column(name = "first_name")
-   String firstName;
-	@Column(name = "last_name")
-   String lastName;
-	@Column(name = "date")
-   Date dob;
    @ManyToMany
    Set<Role> roles; 
 }

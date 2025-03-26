@@ -1,13 +1,26 @@
 server:
   port: 8080
   servlet:
-    context-path: /identity_service
+    context-path: /identity
 spring:
   datasource:
     url: "jdbc:mysql://localhost:3306/identity_service"
     username: root
     password: root
+  application:
+     name: identity-service
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 jwt:
   signerKey: "TiLyhulYNPgfXQU1HDKjDdGqjxxzHT3f9wHGzZ9EXiKb4/skSbk4eywLBKpGXrfk\r"
   valid-duration : 1000
   refreshable-duration: 10000
+eureka:
+    client:
+      service-url:
+        defaultZone: "http://localhost:8761/eureka/"  
+    instance:
+      prefer-ip-address: true

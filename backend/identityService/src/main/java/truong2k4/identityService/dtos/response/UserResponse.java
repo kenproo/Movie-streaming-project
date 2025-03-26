@@ -1,6 +1,7 @@
 package truong2k4.identityService.dtos.response;
 
 import java.util.Date;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import lombok.AccessLevel;
@@ -11,6 +12,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
+import truong2k4.identityService.entity.Role;
 import truong2k4.identityService.entity.User;
 @Data
 @NoArgsConstructor
@@ -21,7 +23,5 @@ public class UserResponse {
 	String idUser;
 	String username;
 	String password;
-	String firstName;
-	String lastName;
-    Date dob;
+	 Set<Role> roles; 
 }

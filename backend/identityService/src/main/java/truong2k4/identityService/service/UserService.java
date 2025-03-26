@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import truong2k4.identityService.dtos.response.UserResponse;
 import truong2k4.identityService.repository.RoleRepository;
 import truong2k4.identityService.repository.UserRepository;
+import truong2k4.identityService.repository.httpclient.ProfileClient;
 import truong2k4.identityService.constant.PredefinedPermission;
 import truong2k4.identityService.constant.PredefinedRole;
 import truong2k4.identityService.dtos.request.UserCreationRequest;
@@ -30,6 +31,7 @@ import truong2k4.identityService.entity.Role;
 import truong2k4.identityService.entity.User;
 import truong2k4.identityService.exception.AppException;
 import truong2k4.identityService.exception.ErrorCode;
+import truong2k4.identityService.mapper.ProfileMapper;
 import truong2k4.identityService.mapper.UserMapper;
 
 @Slf4j
@@ -41,7 +43,8 @@ public class UserService {
 	UserRepository userRepository;
 	RoleRepository roleRepository;
 	PasswordEncoder passwordEncoder;
-
+    ProfileClient profileClient;
+    ProfileMapper profileMapper;
 	public UserResponse createUser(UserCreationRequest request) {
 		log.info("Service: Create User");
 
@@ -54,6 +57,8 @@ public class UserService {
         Optional<Role> roles = roleRepository.findById(PredefinedRole.ROLE_USER);
 		// user.setRoles(roles);
         user.setRoles(roles.map(Set::of).orElse(Set.of()));
+        userRepository.save(user);
+        profileClient.createProfile(profileMapper.toProfileCreationRequest(request));
 		return userMapper.toUserResponse(userRepository.save(user));
 	}
     
